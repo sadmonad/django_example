@@ -1,4 +1,5 @@
 # Simple Django project structure
+## About
 According to [recommended django project layout](https://www.revsys.com/tidbits/recommended-django-project-layout/),
 [django-environ lib](https://github.com/joke2k/django-environ) and my experience.
 
@@ -47,3 +48,15 @@ django_example
 │   └── base.html
 └── .travis.yml
 ```
+
+## Installation
+Just simply run the following:
+```bash
+django-admin startapp --template=https://github.com/sadmonad/django_example/archive/0.0.1.zip <project_name>
+cd django_example/ && virtualenv env && . env/bin/activate
+pip install -r requirements_dev.txt
+python manage.py runserver --settings=django_example.settings.dev
+```
+
+## Support
+Contributing and issues opening are welcome! 
