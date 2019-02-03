@@ -1,23 +1,23 @@
 import os
 import environ
 
-ENV_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'django_example'))
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+ENV_FILE = os.path.join(os.path.dirname(BASE_DIR), '.env')
 
 env = environ.Env(
     DEBUG=(bool, True)
 )
 
-environ.Env.read_env(ENV_DIR)
+environ.Env.read_env(ENV_FILE)
 
-
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = env('SECRET_KEY')
 
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
-
+ALLOWED_HOSTS = []
 
 PREREQ_APPS = [
     'django.contrib.admin',
