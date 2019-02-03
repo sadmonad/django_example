@@ -16,6 +16,14 @@ branches:
   only:
     - master
 
+deploy:
+  provider: releases
+  api_key: $GITHUB_AUTH_TOKEN
+  skip_cleanup: true
+  on:
+    repo: https://github.com/sadmonad/django_example
+    tags: true
+
 notifications:
   email:
     on_success: never
